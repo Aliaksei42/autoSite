@@ -1,0 +1,98 @@
+/* src/components/Header/Header.css */
+header {
+  background: #2a2a2a;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+.headerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0; /* Убираем нижний отступ */
+}
+
+/* Выпадающее окно с возможностью выбора языка */
+
+.languageSwitch {
+  cursor: pointer;
+  position: relative;
+  padding-right: 353px;
+}
+
+.languageMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #555;
+  color: white;
+  border: 1px solid #333;
+  border-top: none;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.languageMenu div {
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.languageMenu div:hover {
+  background-color: #444;
+}
+
+/* End Выпадающее окно с возможностью выбора языка */
+
+/* Средняя часть часть логотин и название сайта */
+/* Header.css (дополнение) */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%; /* Новое свойство для выравнивания */
+}
+
+.logo img {
+  width: 40px; /* Укажите подходящую ширину для вашего логотипа */
+  margin-right: 5px;
+}
+
+.logo span {
+  font-size: 40px; /* Подберите размер шрифта по вашему усмотрению */
+}
+
+.logoLink {
+  text-decoration: none; /* Убираем стандартное подчеркивание для ссылки */
+  color: white; /* Устанавливаем цвет текста */
+}
+
+/* End Средняя часть часть логотин и название сайта */
+
+/* Правая часть конверт*/
+
+.emailLink {
+  text-decoration: none;
+  color: white;
+  padding-left: 353px;
+}
+
+.emailLink:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.emailIcon {
+  font-size: 30px;
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+  color: white; /* Устанавливаем цвет текста */
+}
+
+.emailIcon:hover {
+  color: white; /* Вы можете изменить цвет при наведении, если хотите */
+  text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+/* End Правая часть конверт*/

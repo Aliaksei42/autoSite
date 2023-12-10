@@ -1,0 +1,69 @@
+.topPostLink {
+  text-decoration: none; /* Убираем подчеркивание для ссылок */
+}
+
+.topPost {
+  position: relative;
+
+  display: flex; /* Устанавливаем контейнеру свойство display: flex; для использования flex-контейнера */
+  flex-direction: column; /* Задаем направление основной оси контейнера как column (столбец) */
+  /* Выравниваем дочерние элементы по центру вдоль поперечной оси */
+  /* Используем space-around для равномерного распределения отступов между дочерними элементами вдоль основной оси */
+  color: black; /* Устанавливаем цвет текста внутри контейнера */
+  width: 720px; /* Устанавливаем ширину контейнера */
+  height: 540px;
+  transition: transform 0.3s ease-in-out;
+
+  overflow: hidden; /* Ограничиваем видимость дочерних элементов по границам контейнера */
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание для всех ссылок внутри .post */
+}
+
+.topPost:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  transform: scale(1); /* Изначально масштабирование равно 1 */
+}
+.topPost:hover::before {
+  transform: scale(1.1); /* Масштабирование при наведении */
+}
+
+.topPost h3 {
+  font-size: 28px;
+}
+
+
+.topPostTitle {
+  color: black; /* Устанавливаем цвет текста заголовка */
+  max-height: 64px;/* Устанавливаем высоту строки заголовка */
+  text-decoration: none;
+  line-height: 32px; 
+}
+
+.topPostText {
+  width: 100%; /* Занимаем 100% ширины контейнера */
+  color: black; /* Устанавливаем цвет текста внутреннего текста */
+  font-size: 20px; /* Устанавливаем размер шрифта внутреннего текста */
+ 
+}
+
+.topPostImage {
+  width: 720px; /* Устанавливаем ширину изображения */
+  height: 400px;
+  object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+  transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+}
+.topPost:hover .topPostImage {
+  transform: scale(1.1); /* Увеличиваем размер изображения при наведении */
+}
+
+.topPost:hover .topPostTitle {
+  text-decoration: underline; /* Убираем подчеркивание для текста и изображения при наведении на .post */
+}

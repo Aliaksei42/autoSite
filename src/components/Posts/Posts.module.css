@@ -1,0 +1,34 @@
+/* Posts.module.css */
+
+.postsContainer {
+  width: 1130px;
+  margin: 0 auto;
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание по центру по горизонтали */
+}
+
+.postsRow {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.postsLeft {
+  max-width: 720px;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Расстояние между постами */
+}
+
+.postsRight {
+  display: flex; /* Добавляем свойство display: flex; для управления потомками */
+  flex-direction: column; /* Размещаем потомков в колонке */
+  align-items: flex-start; /* Выравниваем по левому краю */
+  max-width: 410px;
+}
+

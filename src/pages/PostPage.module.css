@@ -1,0 +1,38 @@
+/* PostPage.module.css */
+
+.postPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Высота 100% экрана */
+  
+}
+
+.postContainer {
+  max-width: 1100px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.postPageImage {
+  width: 1100px;
+  height: 680px;
+  object-fit: cover;
+}
+
+.postPageTitle {
+  width: 1100px;
+  color: black;
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+
+.postPageText {
+  width: 1100px;
+  color: black;
+  font-size: 26px;
+  line-height: 32px;
+}
+
