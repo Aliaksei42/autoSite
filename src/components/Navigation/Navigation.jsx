@@ -21,7 +21,7 @@ const Navigation = () => {
           Trends
         </NavLink>
         <NavLink to="/searchPage" className={`${styles.navLink} ${location.pathname === '/searchPage' ? styles.active : ''}`}>
-          Gallery
+          Search
         </NavLink>
         <NavLink to="/interesting" className={`${styles.navLink} ${location.pathname === '/interesting' ? styles.active : ''}`}>
           Interesting

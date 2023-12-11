@@ -21,6 +21,8 @@ const PostPage = () => {
     return <NotFound />
   }
 
+  
+  
   return (
     <div className={styles.postPage}>
       <div className={styles.postContainer}>
