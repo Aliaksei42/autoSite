@@ -20,7 +20,7 @@ const Navigation = () => {
         <NavLink to="/trends" className={`${styles.navLink} ${location.pathname === '/trends' ? styles.active : ''}`}>
           Trends
         </NavLink>
-        <NavLink to="/gallery" className={`${styles.navLink} ${location.pathname === '/gallery' ? styles.active : ''}`}>
+        <NavLink to="/searchPage" className={`${styles.navLink} ${location.pathname === '/searchPage' ? styles.active : ''}`}>
           Gallery
         </NavLink>
         <NavLink to="/interesting" className={`${styles.navLink} ${location.pathname === '/interesting' ? styles.active : ''}`}>

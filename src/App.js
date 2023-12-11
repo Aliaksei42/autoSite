@@ -13,7 +13,7 @@ import PostPage from './pages/PostPage'
 import News from './pages/News'
 import Events from './pages/Events'
 import Trends from './pages/Trends'
-import Gallery from './pages/Gallery'
+import SearchPage from './pages/SearchPage'
 import Interesting from './pages/Interesting'
 
 import NotFound from './components/NotFound/NotFound'
@@ -36,7 +36,7 @@ const App = () => {
           <Route path="news" element={<News />} />
           <Route path="events" element={<Events />} />
           <Route path="trends" element={<Trends />} />
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="searchPage" element={<SearchPage />} />
           <Route path="interesting" element={<Interesting />} />
         
           <Route path="notFound" element={<NotFound />} />
