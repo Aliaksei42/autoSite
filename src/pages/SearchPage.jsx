@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import posts from '../data/posts.js';
 import styles from './SearchPage.module.css';
 import Post from '../components/Post/Post';
+import UserList from '../components/UserList/UserList.jsx';
 
 const SearchPage = () => {
   // Состояния компонента

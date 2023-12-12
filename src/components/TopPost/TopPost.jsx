@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './TopPost.module.css';
 
+
 const TopPost = ({ topPost }) => {
   const { id, img, title, text, date } = topPost; // Добавлено id
   const [isExpanded, setIsExpanded] = useState(false);
