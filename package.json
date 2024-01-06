@@ -46,5 +46,9 @@
   "devDependencies": {
     "gh-pages": "^6.1.0",
     "nodemon": "^3.0.2"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "db.js",
+  "author": "",
+  "license": "ISC"
 }
