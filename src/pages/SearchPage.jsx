@@ -1,75 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import posts from '../data/posts.js';
+import axios from 'axios';
 import styles from './SearchPage.module.css';
 import Post from '../components/Post/Post';
-import UserList from '../components/UserList/UserList.jsx';
 
 const SearchPage = () => {
-  // Состояния компонента
-  const [searchPage, setSearchPage] = useState(posts); // Состояние для хранения всех постов
-  const [searchTerm, setSearchTerm] = useState(''); // Состояние для хранения строки поиска
-  const [searchResults, setSearchResults] = useState([]); // Состояние для хранения отфильтрованных результатов поиска
+  const [allPosts, setAllPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  // Эффект, выполняющийся при изменении searchTerm или searchPage
   useEffect(() => {
-    // Функция для сортировки постов по дате
-    const sortByDate = (a, b) => new Date(b.date) - new Date(a.date);
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/posts');
+        setAllPosts(response.data);
+      } catch (error) {
+        console.error('Ошибка при получении постов:', error);
+      }
+    };
 
-    // Фильтрация постов, если searchTerm не пустой
-    const filteredsearchPage = searchTerm
-      ? searchPage
-          .filter(
-            (post) =>
-              post.title.toLowerCase().includes(searchTerm.toLowerCase()) || // Поиск в заголовке
-              post.text.toLowerCase().includes(searchTerm.toLowerCase())   // Поиск в тексте
-          )
-          .sort(sortByDate) // Сортировка отфильтрованных постов по дате
-      : [];
+    fetchPosts();
+  }, []);
 
-    // Обновление состояния searchResults
-    setSearchResults(filteredsearchPage);
-  }, [searchTerm, searchPage]); // Зависимости эффекта - searchTerm и searchPage
-
-  // Обработчик изменения строки поиска
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3002/posts?search=${searchTerm}`);
+      setSearchResults(response.data);
+    } catch (error) {
+      console.error('Ошибка при выполнении поиска:', error);
+    }
+  };
+
   return (
     <div className={styles.searchContainer}>
-    <div className={styles.searchRow}>
-      <div className={styles.searchLeft}>
-      {/* Заголовок страницы */}
-      <h1>Все посты - за все времена</h1>
+      <div className={styles.searchRow}>
+        <div className={styles.searchLeft}>
+          <h1>Все посты - за все времена</h1>
+          <div className={styles.inputWithButton}>
+            <input
+              type="text"
+              placeholder="Wpisz tekst do wyszukania"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className={styles.input}
+            />
+            <button className={styles.inputButton} onClick={handleSearch}>
+              Szukaj
+            </button>
+          </div>
 
-      {/* Ввод текста для поиска с кнопкой */}
-      <div className={styles.inputWithButton}>
-        <input
-          type="text"
-          placeholder="Wpisz tekst do wyszukania"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className={styles.input}
-        />
-        <button className={styles.inputButton}>
-          Szukaj
-        </button>
+          {searchTerm && (
+            <ul>
+              {searchResults.map((post) => (
+                <div key={post.id} className={styles.search}>
+                  <Post post={post} />
+                </div>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-
-      {/* Вывод результатов поиска, если searchTerm не пустой */}
-      {searchTerm && (
-        <ul>
-          {/* Маппинг отфильтрованных постов для вывода */}
-          {searchResults.map((post) => (
-              <div key={post.id} className={styles.search}>
-              {/* Передаем компоненту Post информацию о посте */}
-              <Post post={post} />
-            </div>
-          ))}
-        </ul>
-      )}
-    </div>
-    </div>
     </div>
   );
 };
