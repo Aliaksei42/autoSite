@@ -16,14 +16,15 @@ const getPosts = (req, res) => {
 }
 
   const getPost = (req, res) => {
-    Post.findById(req.params.id)
+    // Post.findById(req.params.slug)
+    Post.findOne({ slug: req.params.slug })
       .then((post) => {
         res.status(200).json(post)
       })
       .catch((err) => handleError(res, err))  }
   
   const deletePost = (req, res) => {
-    Post.findByIdAndDelete(req.params.id)
+    Post.findByIdAndDelete(req.params.slug)
       .then((result) => {
         res.status(200).json(result)
       })

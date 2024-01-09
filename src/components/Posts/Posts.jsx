@@ -7,9 +7,7 @@ import SidebarPosts from '../SidebarPosts/SidebarPosts'
 
 
 import topPosts from '../../data/topPosts'
-
 import sidebarPosts from '../../data/sidebarPosts'
-
 import styles from './Posts.module.css'
 
 const Posts = () => {
@@ -47,9 +45,9 @@ const Posts = () => {
           <div className={styles.posts}>
             {/* Маппим массив постов для их отображения */}
             {allPosts.slice(0, visiblePosts).map((post) => (
-              <div key={post.id} className={styles.posts}>
+              <div key={post.slug} className={styles.posts}>
                 {/* Передаем компоненту Post информацию о посте */}
-                <Post key={post.id} post={post} />
+                <Post key={post.slug} post={post} />
               </div>
             ))}
           </div>

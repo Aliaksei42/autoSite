@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './Post.module.css';
 
 const Post = ({ post }) => {
-  const { img, title, text, date } = post;
+  const { img, title, text, date, slug } = post;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -15,12 +15,12 @@ const Post = ({ post }) => {
   const formattedText = isExpanded ? (
     <div dangerouslySetInnerHTML={{ __html: text }} />
   ) : (
-    <div dangerouslySetInnerHTML={{ __html: text.slice(0, 100) + '...' }} />
+    <div dangerouslySetInnerHTML={{ __html: text.slice(0, 70) + '...' }} />
   );
 
   return (
     <Link
-      to={`/posts/${post.id}-${formattedTitle.replace(/\s+/g, '-')}`}
+      to={`/posts/${slug}`}
       className={styles.postLink}
       onClick={toggleExpand}
     >

@@ -31,7 +31,7 @@ const App = () => {
           <Route index element={<Home />} />
           {/* Маршрут для отдельной страницы поста */}
           
-          <Route path="posts/:postId" element={<PostPage />} />
+          <Route path="posts/:slug" element={<PostPage />} />
           {/* Новые маршруты для других страниц */}
           <Route path="news" element={<News />} />
           <Route path="events" element={<Events />} />

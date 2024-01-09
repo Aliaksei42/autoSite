@@ -13,9 +13,9 @@ const {
 const router = express.Router()
 
 router.get('/posts', getPosts)
-router.get('/posts/:id', getPost)
-router.delete('/posts/:id', deletePost)
+router.get('/posts/:slug', getPost)
+router.delete('/posts/:slug', deletePost)
 router.post('/posts', addPost)
-router.patch('/posts/:id', updatePost)
+router.patch('/posts/:slug', updatePost)
 
 module.exports = router;
