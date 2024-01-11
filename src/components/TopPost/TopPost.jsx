@@ -1,28 +1,28 @@
 // TopPost.js
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import styles from './TopPost.module.css';
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import styles from './TopPost.module.css'
 
 const TopPost = ({ topPost }) => {
   // Используем useEffect для инициализации состояния
   useEffect(() => {
     if (topPost) {
-      setIsExpanded(false);
+      setIsExpanded(false)
     }
-  }, [topPost]);
+  }, [topPost])
 
   // Используем useState для хранения состояния
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false)
 
   if (!topPost) {
-    return null; // или обработайте случай, когда topPost не определен
+    return null // или обработайте случай, когда topPost не определен
   }
 
-  const { img, title, text, date, slug } = topPost;
+  const { img, title, text, slug } = topPost
 
   const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
+    setIsExpanded(!isExpanded)
+  }
 
   return (
     <Link
@@ -38,10 +38,9 @@ const TopPost = ({ topPost }) => {
         <div className={styles.topPostText}>
           {isExpanded ? text : `${text.slice(0, 100)}...`}
         </div>
-        <h4>{date}</h4>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default TopPost;
+export default TopPost

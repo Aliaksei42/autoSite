@@ -14,33 +14,17 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  
-  .searchLeft {
-    max-width: 720px;
-  }
-  
+    
   .search {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; /* Расстояние между постами */
   }
-  
-  .searchRight {
-    display: flex; /* Добавляем свойство display: flex; для управления потомками */
-    flex-direction: column; /* Размещаем потомков в колонке */
-    align-items: flex-start; /* Выравниваем по левому краю */
-    max-width: 410px;
-  }
-  
-  
-
-
 
 .inputWithButton {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 320px;
 }
 
 .input {
@@ -55,23 +39,4 @@
     width: 14px;
     height: 14px;
   }
-}
-
-.inputButton {
-  color: rgb(26, 26, 26);
-  display: inline-block;
-  font-family: 'Roboto, sans-serif';
-  font-size: 16px;
-  font-weight: 700;
-  height: 50px;
-  line-height: 24px;
-  text-decoration: none;
-  width: 50px;
-  background-color: transparent; /* Добавлено свойство */
-  transition: color 0.3s, border-color 0.3s; /* Добавлены свойства для плавного перехода цвета */
-}
-
-.button:hover {
-  color: #d31a22; /* Цвет текста при наведении */
-  border-color: #d31a22; /* Цвет границы при наведении */
 }
