@@ -55,7 +55,7 @@ const SearchPage = () => {
           {searchTerm && (
             <ul>
               {searchResults.map((post) => (
-                <div key={post.id} className={styles.search}>
+                <div key={post.slug} className={styles.search}>
                   <Post post={post} />
                 </div>
               ))}

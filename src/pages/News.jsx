@@ -1,6 +1,15 @@
 // src/pages/News.js
-import React from 'react';
+import React from 'react'
+import Posts from '../components/Posts/Posts'
 
-const News = () => <h2>Новости</h2>;
+// Assume you have a News component similar to Home
 
-export default News;
+const News = () => {
+  return (
+    <div>
+      <Posts category="News" />
+    </div>
+  )
+}
+
+export default News

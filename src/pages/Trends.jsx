@@ -1,6 +1,13 @@
 // src/pages/Trends.js
-import React from 'react';
+import React from 'react'
+import Posts from '../components/Posts/Posts'
 
-const Trends = () => <h2>Тренды</h2>;
+const Trends = () => {
+  return (
+    <div>
+      <Posts category="Trends" />
+    </div>
+  )
+}
 
 export default Trends;

@@ -55,14 +55,12 @@ const PostPage = () => {
   }
 
   const { img, title, text, date, category } = selectedPost
-  const postUrl = `http://localhost:3000/posts/${slug}`
+  // const postUrl = `http://localhost:3000/posts/${slug}`
 
   const formattedText = text.split('\n').map((paragraph, index) => (
     // Используем dangerouslySetInnerHTML для выделения нужных частей текста
     <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
   ))
-
-
 
   return (
     <div className={styles.postPage}>
@@ -70,10 +68,11 @@ const PostPage = () => {
         <img src={img} alt={title} className={styles.postPageImage} />
         <div className={styles.postPageTitle}>
           <h3>{title}</h3>
-          
         </div>
-        <div className={styles.postPageText}>{formattedText}{date}</div>
-        
+        <div className={styles.postPageText}>
+          {formattedText}
+          {date}
+        </div>
       </div>
     </div>
   )

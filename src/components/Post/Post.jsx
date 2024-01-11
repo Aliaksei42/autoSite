@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './Post.module.css';
 
 const Post = ({ post }) => {
-  const { img, title, text, date, slug } = post;
+  const { img, title, text, slug } = post;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -26,11 +26,11 @@ const Post = ({ post }) => {
     >
       <div className={styles.post}>
         <img src={img} alt={formattedTitle} className={styles.postImage} />
+        
         <div className={styles.postTitle}>
           <h3>{formattedTitle}</h3>
         </div>
         <div className={styles.postText}>{formattedText}</div>
-        <h4>{date}</h4>
       </div>
     </Link>
   );
