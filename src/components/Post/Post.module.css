@@ -122,8 +122,8 @@
 @media screen and (max-width: 630px) and (min-width: 460px) {
   .post {
     width: 290px; /* Устанавливаем ширину контейнера */
-    height: 430px;
-    margin-bottom: -10px;
+    height: 420px;
+    margin-bottom: -30px;
   }
 
   .postTitle {
@@ -145,15 +145,15 @@
 @media screen and (max-width: 460px) {
   .post {
     width: 290px; /* Устанавливаем ширину контейнера */
-    height: 430px;
-    margin-bottom: -30px;
+    height: 350px;
+    margin-bottom: -20px;
   }
 
   .postTitle {
     line-height: 18px; /* Устанавливаем высоту строки заголовка */
-    max-height: 18px;
+    max-height: 8px;
     text-decoration: none;
-    margin-bottom: 5px;
+    margin-bottom: -5px;
     margin-top: -50px; /* Поднимаем заголовок на 20px */
   }
   .post h3 {
@@ -163,5 +163,12 @@
     margin-top: 10px;
     font-size: 18px; /* Устанавливаем размер шрифта внутреннего текста */
   }
+  .postImage {
+    width: 345px; /* Устанавливаем ширину изображения */
+    height: 205px;
+    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+    transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+  }
+  
 }
 

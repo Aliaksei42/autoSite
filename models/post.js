@@ -24,6 +24,10 @@ const postSchema = new Schema({
   subtitle: {
     type: String,
   },
+  date: {
+    type: String,
+  },
+  
 })
 
 const Post = mongoose.model('Post', postSchema)
