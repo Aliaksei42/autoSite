@@ -15,7 +15,7 @@ const Post = ({ post }) => {
   const formattedText = isExpanded ? (
     <div dangerouslySetInnerHTML={{ __html: text }} />
   ) : (
-    <div dangerouslySetInnerHTML={{ __html: text.slice(0, 70) + '...' }} />
+    <div dangerouslySetInnerHTML={{ __html: text.slice(0, 50) + '...' }} />
   );
 
   return (

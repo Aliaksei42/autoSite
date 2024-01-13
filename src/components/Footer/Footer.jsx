@@ -19,7 +19,7 @@ const Footer = () => {
                 height={40}
               />
             </Link>
-            <Link to="https://www.instagram.com/your-instagram" target="_blank">
+            {/* <Link to="https://www.instagram.com/your-instagram" target="_blank">
               <img
                 src="/img/icons/instagramIcon.png"
                 alt="instagram"
@@ -34,7 +34,7 @@ const Footer = () => {
                 width={40}
                 height={40}
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className={styles.details}>
@@ -42,7 +42,7 @@ const Footer = () => {
             © Auto-Wroclaw.pl - Twój samochód, Twoja droga, Twoje miasto{' '}
             {new Date().getFullYear()}
           </p>
-          <p>Operated by Aliaksei I. Corporation</p>
+        
         </div>
       </div>
     </footer>

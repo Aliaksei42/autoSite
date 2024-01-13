@@ -39,12 +39,13 @@
   font-size: 28px;
 }
 
-.post h4 {
+/* .post h4 {
   font-size: 16px;
   color: black;
-}
+} */
 
 .postTitle {
+  display: flex;
   color: black; /* Устанавливаем цвет текста заголовка */
   line-height: 32px; /* Устанавливаем высоту строки заголовка */
   max-height: 64px;
@@ -70,9 +71,97 @@
   transform: scale(1.1); /* Увеличиваем размер изображения при наведении */
 }
 
-.post:hover  .postTitle {
+.post:hover .postTitle {
   text-decoration: underline; /* Убираем подчеркивание для текста и изображения при наведении на .post */
-
 }
 
+@media screen and (max-width: 1150px) and (min-width: 950px) {
+  .post {
+    width: 280px; /* Устанавливаем ширину контейнера */
+    height: 430px;
+  }
+
+  .postTitle {
+    line-height: 22px; /* Устанавливаем высоту строки заголовка */
+    max-height: 34px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: -30px; /* Поднимаем заголовок на 20px */
+  }
+  .post h3 {
+    font-size: 20px;
+  }
+  .postText {
+    margin-top: 10px;
+    font-size: 18px; /* Устанавливаем размер шрифта внутреннего текста */
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 630px) {
+  .post {
+    width: 280px; /* Устанавливаем ширину контейнера */
+    height: 430px;
+  }
+
+  .postTitle {
+    line-height: 22px; /* Устанавливаем высоту строки заголовка */
+    max-height: 34px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: -30px; /* Поднимаем заголовок на 20px */
+  }
+  .post h3 {
+    font-size: 20px;
+  }
+  .postText {
+    margin-top: 10px;
+    font-size: 18px; /* Устанавливаем размер шрифта внутреннего текста */
+  }
+}
+
+@media screen and (max-width: 630px) and (min-width: 460px) {
+  .post {
+    width: 290px; /* Устанавливаем ширину контейнера */
+    height: 430px;
+    margin-bottom: -10px;
+  }
+
+  .postTitle {
+    line-height: 18px; /* Устанавливаем высоту строки заголовка */
+    max-height: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: -50px; /* Поднимаем заголовок на 20px */
+  }
+  .post h3 {
+    font-size: 20px;
+  }
+  .postText {
+    margin-top: 10px;
+    font-size: 18px; /* Устанавливаем размер шрифта внутреннего текста */
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .post {
+    width: 290px; /* Устанавливаем ширину контейнера */
+    height: 430px;
+    margin-bottom: -30px;
+  }
+
+  .postTitle {
+    line-height: 18px; /* Устанавливаем высоту строки заголовка */
+    max-height: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    margin-top: -50px; /* Поднимаем заголовок на 20px */
+  }
+  .post h3 {
+    font-size: 20px;
+  }
+  .postText {
+    margin-top: 10px;
+    font-size: 18px; /* Устанавливаем размер шрифта внутреннего текста */
+  }
+}
 

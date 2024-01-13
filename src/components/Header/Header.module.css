@@ -104,7 +104,7 @@ header {
 /* End Правая часть конверт*/
 
 /* Добавление стилей для экранов от 1100px до 900px */
-@media screen and (max-width: 1100px) and (min-width: 950px) {
+@media screen and (max-width: 1150px) and (min-width: 950px) {
   header {
     font-size: 17px;
     padding: 10px;

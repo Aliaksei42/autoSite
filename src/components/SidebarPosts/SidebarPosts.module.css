@@ -1,5 +1,6 @@
 .sidebarPostLink {
-  text-decoration: none;  /* Убираем подчеркивание для ссылок */
+  text-decoration: none; /* Убираем подчеркивание для ссылок */
+  font-size: 20px;
 }
 
 .sidebarPost {
@@ -37,14 +38,14 @@
 }
 
 .sidebarPost h3 {
-  font-size: 20px;
+  font-size: 1em;
 }
 
 .sidebarPostTitle {
   color: black; /* Устанавливаем цвет текста заголовка */
   padding-left: 10px;
   text-decoration: none;
-  
+
   line-height: 22px; /* Устанавливаем высоту строки заголовка */
   width: 100%; /* Занимаем всю доступную ширину */
   margin-left: 10px; /* Добавляем отступ слева */
@@ -63,4 +64,8 @@
 
 .sidebarPost:hover .sidebarPostTitle {
   text-decoration: underline; /* Убираем подчеркивание для текста и изображения при наведении на .post */
+}
+
+@media screen and (max-width: 950px) and (min-width: 630px) {
+
 }

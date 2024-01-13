@@ -1,5 +1,7 @@
 .topPostLink {
   text-decoration: none; /* Убираем подчеркивание для ссылок */
+  font-size: 20px;
+  justify-content: center;
 }
 
 .topPost {
@@ -17,6 +19,7 @@
   overflow: hidden; /* Ограничиваем видимость дочерних элементов по границам контейнера */
   cursor: pointer;
   text-decoration: none; /* Убираем подчеркивание для всех ссылок внутри .post */
+
 }
 
 .topPost:hover::before {
@@ -36,22 +39,20 @@
 }
 
 .topPost h3 {
-  font-size: 28px;
+  font-size: 1.4em;
 }
-
 
 .topPostTitle {
   color: black; /* Устанавливаем цвет текста заголовка */
-  max-height: 64px;/* Устанавливаем высоту строки заголовка */
+  max-height: 64px; /* Устанавливаем высоту строки заголовка */
   text-decoration: none;
-  line-height: 32px; 
+  line-height: 32px;
 }
 
 .topPostText {
-  width: 100%; /* Занимаем 100% ширины контейнера */
+  width: 720px; /* Занимаем 100% ширины контейнера */
   color: black; /* Устанавливаем цвет текста внутреннего текста */
-  font-size: 20px; /* Устанавливаем размер шрифта внутреннего текста */
- 
+  font-size: 1em; /* Устанавливаем размер шрифта внутреннего текста */
 }
 
 .topPostImage {
@@ -60,6 +61,7 @@
   object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
   transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
 }
+
 .topPost:hover .topPostImage {
   transform: scale(1.1); /* Увеличиваем размер изображения при наведении */
 }
@@ -67,3 +69,108 @@
 .topPost:hover .topPostTitle {
   text-decoration: underline; /* Убираем подчеркивание для текста и изображения при наведении на .post */
 }
+
+@media screen and (max-width: 1150px) and (min-width: 950px) {
+  .topPost {
+    width: 590px; /* Устанавливаем ширину контейнера */
+    height: 460px;
+  }
+  .topPostImage {
+    width: 590px; /* Устанавливаем ширину изображения */
+    height: 330px;
+    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+    transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+  }
+  .topPostTitle {
+    color: black; /* Устанавливаем цвет текста заголовка */
+    max-height: 46px; /* Устанавливаем высоту строки заголовка */
+    line-height: 3px;
+  }
+  .topPostText {
+    width: 590px; 
+  }
+
+  .topPost:hover .topPostImage {
+    transform: scale(1.08); /* Увеличиваем размер изображения при наведении */
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 630px) {
+  .topPost {
+    width: 590px; /* Устанавливаем ширину контейнера */
+    height: 460px;
+    
+  }
+  .topPostImage {
+    width: 590px; /* Устанавливаем ширину изображения */
+    height: 330px;
+    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+    transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+  }
+  .topPostTitle {
+ max-height: 46px; /* Устанавливаем высоту строки заголовка */
+    line-height: 3px;
+  }
+  .topPostText {
+    width: 590px; 
+  }
+
+  .topPost:hover .topPostImage {
+    transform: scale(1.08); /* Увеличиваем размер изображения при наведении */
+  }
+}
+
+@media screen and (max-width: 630px) and (min-width: 460px) {
+  .topPost {
+    width: 440px; /* Устанавливаем ширину контейнера */
+    height: 460px;
+    justify-content: center;
+  }
+  .topPostImage {
+    width: 440px; /* Устанавливаем ширину изображения */
+    height: 330px;
+    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+    transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+  }
+  .topPostTitle {
+ max-height: 46px; /* Устанавливаем высоту строки заголовка */
+    line-height: 3px;
+  }
+  .topPostText {
+    width: 590px; 
+  }
+
+  .topPost:hover .topPostImage {
+    transform: scale(1.08); /* Увеличиваем размер изображения при наведении */
+  }
+}
+
+@media screen and (max-width: 460px){
+  .topPost {
+    width: 290px; /* Устанавливаем ширину контейнера */
+    height: 330px;
+    justify-content: center;
+  }
+  .topPostImage {
+    width: 290px; /* Устанавливаем ширину изображения */
+    height: 200px;
+    object-fit: cover; /* Заполняем контейнер, сохраняя пропорции изображения */
+    transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
+  }
+  .topPostTitle {
+ max-height: 26px; /* Устанавливаем высоту строки заголовка */
+    line-height: 3px;
+  }
+  .topPostTitle h3 {
+    font-size: 20px;
+  }
+  .topPostText {
+    width: 290px; 
+  }
+
+  .topPost:hover .topPostImage {
+    transform: scale(1.08); /* Увеличиваем размер изображения при наведении */
+  }
+}
+
+
