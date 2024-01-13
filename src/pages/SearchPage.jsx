@@ -53,7 +53,7 @@ const SearchPage = () => {
           <div className={styles.inputWithButton}>
             <input
               type="text"
-              placeholder="Введите текст для поиска"
+              placeholder="Wpisz tekst do wyszukania"
               value={searchTerm}
               onChange={handleSearchChange}
               className={styles.input}
@@ -61,13 +61,15 @@ const SearchPage = () => {
           </div>
 
           {searchTerm && (
-            <ul>
+            
+              <div className={styles.search}> {/* Use a div instead of ul */}
               {filteredResults.map((post) => (
                 <div key={post.slug} className={styles.search}>
                   <Post post={post} />
                 </div>
               ))}
-            </ul>
+               </div>
+           
           )}
         </div>
       </div>

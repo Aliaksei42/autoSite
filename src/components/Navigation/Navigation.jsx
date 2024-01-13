@@ -9,22 +9,22 @@ const Navigation = () => {
     <div className={styles.NavigationSticky}>
       <nav className={styles.nav}>
         <NavLink to="/" exact className={`${styles.navLink} ${location.pathname === '/' ? styles.active : ''}`}>
-          Home
+        Główna
         </NavLink>
         <NavLink to="/news" className={`${styles.navLink} ${location.pathname === '/news' ? styles.active : ''}`}>
-          News
+        Aktualności
         </NavLink>
         <NavLink to="/events" className={`${styles.navLink} ${location.pathname === '/events' ? styles.active : ''}`}>
-          Events
+        Wydarzenia
         </NavLink>
         <NavLink to="/trends" className={`${styles.navLink} ${location.pathname === '/trends' ? styles.active : ''}`}>
-          Trends
+        Trendy
         </NavLink>
         <NavLink to="/searchPage" className={`${styles.navLink} ${location.pathname === '/searchPage' ? styles.active : ''}`}>
-          Search
+        Szukaj
         </NavLink>
         <NavLink to="/interesting" className={`${styles.navLink} ${location.pathname === '/interesting' ? styles.active : ''}`}>
-          Interesting
+        Ciekawy
         </NavLink>
       </nav>
     </div>

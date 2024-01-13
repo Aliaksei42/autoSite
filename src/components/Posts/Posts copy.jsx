@@ -1,55 +1,66 @@
-import React, { useState } from 'react'
-import Button from '../Button/Button'
-import Post from '../Post/Post'
-import TopPost from '../TopPost/TopPost'
-import SidebarPosts from '../SidebarPosts/SidebarPosts'
+// Posts.js
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Button from '../Button/Button';
+import Post from '../Post/Post';
+import TopPost from '../TopPost/TopPost';
+import SidebarPosts from '../SidebarPosts/SidebarPosts';
+import styles from './Posts.module.css';
 
+const Posts = ({ category }) => {
+  const [allPosts, setAllPosts] = useState({ category: [], interesting: [] });
+  const [visiblePosts, setVisiblePosts] = useState(4);
 
-import topPosts from '../../data/topPosts'
-import posts from '../../data/posts'
-import sidebarPosts from '../../data/sidebarPosts'
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/posts');
+        const allFetchedPosts = response.data;
 
-import styles from './Posts.module.css'
+        const categoryPosts = allFetchedPosts.filter(post => post.category === category);
+        const interestingPosts = allFetchedPosts.filter(post => post.category === 'Interesting');
 
-const Posts = () => {
-  // Используем состояние для отслеживания количества видимых постов
-  const [visiblePosts, setVisiblePosts] = useState(4) // Начинаем с отображения 4 постов
-  
+        setAllPosts({
+          category: categoryPosts,
+          interesting: interestingPosts,
+        });
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
 
-  // Обработчик для отображения большего количества постов
+    fetchPosts();
+  }, [category]);
+
   const handleShowMore = () => {
-    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 4) // Увеличиваем количество отображаемых постов на 2
-  }
+    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 4);
+  };
+
+  const topPost = allPosts.category.find(post => post.place === 'top');
 
   return (
-    // Общий контейнер для постов
     <div className={styles.postsContainer}>
       <div className={styles.postsRow}>
         <div className={styles.postsLeft}>
-          {/* Рендерим TopPost перед маппингом постов */}
-          <TopPost topPost={topPosts[0]} />
+          {topPost && <TopPost topPost={topPost} />}
 
           <div className={styles.posts}>
-            {/* Маппим массив постов для их отображения */}
-            {posts.slice(0, visiblePosts).map((post) => (
-              <div key={post.id} className={styles.posts}>
-                {/* Передаем компоненту Post информацию о посте */}
-                <Post post={post} />
+            {allPosts.category.filter(post => post.place !== 'top').slice(0, visiblePosts).map(post => (
+              <div key={post.slug} className={styles.posts}>
+                <Post key={post.slug} post={post} />
               </div>
             ))}
           </div>
         </div>
         <div className={styles.postsRight}>
-          {/* Вместо передачи всех постов передаем только отфильтрованные */}
-          <SidebarPosts sidebarPosts={sidebarPosts} />
+          <SidebarPosts sidebarPosts={allPosts.interesting.slice(0)} />
         </div>
       </div>
-      {/* Показываем кнопку "Показать ещё", если есть ещё посты для отображения */}
-      {visiblePosts < posts.length && (
+      {visiblePosts < allPosts.category.length && (
         <Button onClick={handleShowMore}>Show more</Button>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;
