@@ -41,7 +41,7 @@ const Header = () => {
 
         {/* Правая часть с иконкой конверта */}
         <Link
-          to="https://www.gmail.com"
+          to="https://www.linkedin.com/in/aliaksei-iuko/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.emailLink}

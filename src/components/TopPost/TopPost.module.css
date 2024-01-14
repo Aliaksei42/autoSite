@@ -133,7 +133,7 @@
     transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
   }
   .topPostTitle {
- max-height: 46px; /* Устанавливаем высоту строки заголовка */
+ max-height: 60px; /* Устанавливаем высоту строки заголовка */
     line-height: 3px;
   }
   .topPostText {
@@ -158,9 +158,10 @@
     transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
   }
   .topPostTitle {
- max-height: 26px; /* Устанавливаем высоту строки заголовка */
-    line-height: 3px;
+    line-height: 18px;
+    max-height: 70px;
   }
+  
   .topPostTitle h3 {
     font-size: 20px;
   }

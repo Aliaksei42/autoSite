@@ -70,6 +70,9 @@
   .contacts {
     margin-bottom: -5px;
   }
+  .footerLinks {
+    margin-top: 0px;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -84,6 +87,9 @@
     font-size: 14px;
   }
   .contacts {
-    margin-bottom: -5px;
+    margin-bottom: -10px;
+  }
+  .footerLinks {
+    margin-top: 0px;
   }
 }

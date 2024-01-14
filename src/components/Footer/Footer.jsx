@@ -11,7 +11,7 @@ const Footer = () => {
             <br />
           </p>
           <div className={styles.footerLinks}>
-            <Link to="https://www.gmail.com" target="_blank">
+            <Link to="https://www.linkedin.com/in/aliaksei-iuko/" target="_blank">
               <img
                 src="/img/icons/emailIcon.png"
                 alt="email"
