@@ -133,8 +133,8 @@
     transition: transform 0.3s ease-in-out; /* Анимация увеличения при наведении */
   }
   .topPostTitle {
- max-height: 60px; /* Устанавливаем высоту строки заголовка */
-    line-height: 3px;
+    line-height: 18px;
+    max-height: 70px;
   }
   .topPostText {
     width: 590px; 
