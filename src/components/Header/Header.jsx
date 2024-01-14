@@ -35,7 +35,7 @@ const Header = () => {
         <Link to="/" className={styles.logoLink}>
           <div className={styles.logo}>
             <img src="/logo.png" alt="Logo" />
-            <span className={styles.logoText}>Auto Wroclaw</span>
+            <h1 className={styles.logoText}>Auto Wroclaw</h1>
           </div>
         </Link>
 
