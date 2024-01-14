@@ -15,13 +15,13 @@ const postSchema = new Schema({
   },
   img: {
     type: String,
-    required: true,
+    
   },
   slug: {
     type: String,
     required: true,
   },
-  subtitle: {
+  category: {
     type: String,
   },
   date: {
